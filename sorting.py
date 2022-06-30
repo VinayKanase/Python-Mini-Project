@@ -2,6 +2,7 @@ from tkinter import *
 import random
 from tkinter import ttk
 from bubble_sort import *
+from merge_sort import merge_sort
 from quick_sort import quick_sort
 data_list = []
 root = Tk()
@@ -21,10 +22,12 @@ def start_onCick():
     if selected_algorithm.get() == "Quick Sort":
         quick_sort(data_list, 0, len(data_list) - 1,
                    draw_list_on_canvas, speed_input.get())
-        draw_list_on_canvas(
-            data_list, ['green' for x in range(len(data_list))])
     elif selected_algorithm.get() == "Bubble Sort":
-        bubble_sort(data_list, draw_list_on_canvas, float(speed_input.get()))
+        bubble_sort(data_list, draw_list_on_canvas,
+                    float(speed_input.get()))
+    elif selected_algorithm.get() == "Merge Sort":
+        merge_sort(data_list, draw_list_on_canvas, speed_input.get())
+    draw_list_on_canvas(data_list, ['green' for x in range(len(data_list))])
 
 
 def draw_list_on_canvas(data_list, colors_list):
@@ -77,7 +80,7 @@ algo_input_label.place(x=0, y=0)
 
 # Algorithm select input
 algo_input = ttk.Combobox(root, width=15, textvariable=selected_algorithm, values=[
-                          'Bubble Sort', 'Quick Sort'])
+                          'Bubble Sort', 'Quick Sort', 'Merge Sort'])
 algo_input.place(x=145, y=00)
 
 # Default choice is bubble sort
