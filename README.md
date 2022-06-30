@@ -103,3 +103,7 @@ Code is written on VSCode and successfully deployed on Github.
 **For Quick Sort**
 
 <img src="./output/Quick Sort Output.gif">
+
+**For Merge Sort**
+
+<img src="./output/Merge Sort Output.gif">
